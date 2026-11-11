@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: web-resume
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/webresume}
+    username: ${DB_USERNAME:webresume}
+    password: ${DB_PASSWORD:webresume}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  mvc:
+    problemdetails:
+      enabled: true
+  servlet:
+    multipart:
+      max-file-size: 200MB
+      max-request-size: 200MB
+
+app:
+  admin:
+    username: ${ADMIN_USERNAME:admin}
+    password: ${ADMIN_PASSWORD:admin}
+  jwt:
+    secret: ${JWT_SECRET:dev-secret-change-me-dev-secret-change-me}
+    ttl: 12h
+  upload-dir: ${UPLOAD_DIR:./uploads}
